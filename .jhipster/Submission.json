@@ -1,0 +1,40 @@
+{
+    "name": "Submission",
+    "fields": [
+        {
+            "fieldName": "fileLocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "grade",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "student",
+            "otherEntityName": "student",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "assignment",
+            "otherEntityName": "assignment",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181031202033",
+    "entityTableName": "submission",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

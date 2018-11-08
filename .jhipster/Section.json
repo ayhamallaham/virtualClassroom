@@ -1,0 +1,42 @@
+{
+    "name": "Section",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "order",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "course",
+            "otherEntityName": "course",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "session",
+            "otherEntityName": "session",
+            "otherEntityRelationshipName": "section"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "readingMaterial",
+            "otherEntityName": "readingMaterial",
+            "otherEntityRelationshipName": "section"
+        }
+    ],
+    "changelogDate": "20181031202031",
+    "entityTableName": "section",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

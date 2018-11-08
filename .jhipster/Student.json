@@ -1,0 +1,27 @@
+{
+    "name": "Student",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "group",
+            "otherEntityName": "studyGroup",
+            "otherEntityRelationshipName": "student"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "submission",
+            "otherEntityName": "submission",
+            "otherEntityRelationshipName": "student"
+        }
+    ],
+    "changelogDate": "20181031202028",
+    "entityTableName": "student",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

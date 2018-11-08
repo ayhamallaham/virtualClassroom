@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ayham.vcr",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.3.1",
+    "applicationType": "monolith",
+    "baseName": "VirtualClassroom",
+    "packageName": "com.ayham.vcr",
+    "packageFolder": "com/ayham/vcr",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "OTUyN2RlZDAwYjFhZjYxOTUwZTA4NTVhNGIyMTZiZmNiZTk1NGQyZGMxYjJlZThiNmEyNGYxMTNhNTRjM2I0NWJiYTAyODFiNDJlM2ZkODMwMTFlNjRlYTFhZWEyYmZkNGExYmYxMGM3MWM1M2NiMzIzOTc4NTc0ODU0YjRiMGI=",
+    "clientFramework": "react",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "ar-ly"
+    ]
+  }
+}

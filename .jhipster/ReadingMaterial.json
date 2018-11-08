@@ -1,0 +1,30 @@
+{
+    "name": "ReadingMaterial",
+    "fields": [
+        {
+            "fieldName": "fileLocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "section",
+            "otherEntityName": "section",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181031202034",
+    "entityTableName": "reading_material",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

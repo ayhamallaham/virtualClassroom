@@ -1,0 +1,25 @@
+
+{
+    "virtualClassroomApp": {
+        "readingMaterial" : {
+            "home": {
+                "title": "Reading Materials",
+                "createLabel": "Create a new Reading Material",
+                "createOrEditLabel": "Create or edit a Reading Material",
+                "search": "Search for Reading Material"
+            },
+            "created": "A new Reading Material is created with identifier {{ param }}",
+            "updated": "A Reading Material is updated with identifier {{ param }}",
+            "deleted": "A Reading Material is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Reading Material {{ id }}?"
+            },
+            "detail": {
+                "title": "Reading Material"
+            },
+            "fileLocation": "File Location",
+            "title": "Title",
+            "section": "Section"
+        }
+    }
+}

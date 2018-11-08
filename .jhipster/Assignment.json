@@ -1,0 +1,30 @@
+{
+    "name": "Assignment",
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "explanation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "submission",
+            "otherEntityName": "submission",
+            "otherEntityRelationshipName": "assignment"
+        }
+    ],
+    "changelogDate": "20181031202035",
+    "entityTableName": "assignment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
