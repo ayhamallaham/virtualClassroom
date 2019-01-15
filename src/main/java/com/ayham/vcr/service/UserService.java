@@ -2,8 +2,10 @@ package com.ayham.vcr.service;
 
 import com.ayham.vcr.config.Constants;
 import com.ayham.vcr.domain.Authority;
+import com.ayham.vcr.domain.Student;
 import com.ayham.vcr.domain.User;
 import com.ayham.vcr.repository.AuthorityRepository;
+import com.ayham.vcr.repository.StudentRepository;
 import com.ayham.vcr.repository.UserRepository;
 import com.ayham.vcr.repository.search.UserSearchRepository;
 import com.ayham.vcr.security.AuthoritiesConstants;
@@ -46,12 +48,15 @@ public class UserService {
 
     private final CacheManager cacheManager;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, UserSearchRepository userSearchRepository, AuthorityRepository authorityRepository, CacheManager cacheManager) {
+    private final StudentRepository studentRepository;
+
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, UserSearchRepository userSearchRepository, AuthorityRepository authorityRepository, CacheManager cacheManager, StudentRepository studentRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.userSearchRepository = userSearchRepository;
         this.authorityRepository = authorityRepository;
         this.cacheManager = cacheManager;
+        this.studentRepository = studentRepository;
     }
 
     public Optional<User> activateRegistration(String key) {
@@ -146,7 +151,7 @@ public class UserService {
         } else {
             user.setLangKey(userDTO.getLangKey());
         }
-        String encryptedPassword = passwordEncoder.encode(RandomUtil.generatePassword());
+        String encryptedPassword = passwordEncoder.encode(userDTO.getLogin());
         user.setPassword(encryptedPassword);
         user.setResetKey(RandomUtil.generateResetKey());
         user.setResetDate(Instant.now());
@@ -159,7 +164,13 @@ public class UserService {
                 .collect(Collectors.toSet());
             user.setAuthorities(authorities);
         }
+
         userRepository.save(user);
+
+        Student student = new Student();
+        student.setUser(user);
+        studentRepository.save(student);
+
         userSearchRepository.save(user);
         this.clearUserCaches(user);
         log.debug("Created Information for User: {}", user);

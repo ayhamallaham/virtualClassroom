@@ -111,7 +111,7 @@ export class SectionUpdate extends React.Component<ISectionUpdateProps, ISection
                     {courses
                       ? courses.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.name}
                           </option>
                         ))
                       : null}

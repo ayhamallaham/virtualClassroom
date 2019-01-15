@@ -111,7 +111,7 @@ export class CourseUpdate extends React.Component<ICourseUpdateProps, ICourseUpd
                     {studyGroups
                       ? studyGroups.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.name}
                           </option>
                         ))
                       : null}

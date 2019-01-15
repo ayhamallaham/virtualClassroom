@@ -36,6 +36,16 @@ public class Session implements Serializable {
     @JsonIgnoreProperties("sessions")
     private Section section;
 
+    @ManyToOne
+    @JsonIgnoreProperties("groups")
+    private StudyGroup studyGroup;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "active")
+    private Boolean active;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -112,5 +122,29 @@ public class Session implements Serializable {
             ", date='" + getDate() + "'" +
             ", duration=" + getDuration() +
             "}";
+    }
+
+    public StudyGroup getStudyGroup() {
+        return studyGroup;
+    }
+
+    public void setStudyGroup(StudyGroup studyGroup) {
+        this.studyGroup = studyGroup;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }

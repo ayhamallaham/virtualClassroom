@@ -20,10 +20,8 @@ export class Home extends React.Component<IHomeProp> {
   }
 
   handleOnClick(event: any) {
-    axios.get(`http://localhost:5080/openmeetings/services/user/login?type=json&user=admin&pass=Ayham%232009`)
-      .then(res => {
-        console.log(res);
-      })
+    let win = window.open(" http://localhost:5080/openmeetings/#room/7", '_blank');
+    win.focus();
   }
 
   render() {
@@ -62,7 +60,8 @@ export class Home extends React.Component<IHomeProp> {
         </Col>
 
         <Col md="9">
-          {isAuthenticated && <Button color="primary" onClick = { e => this.handleOnClick(e) }>Test</Button>}
+          <p>You are invited to join a live class session, please click below to join!<br/></p>
+          {isAuthenticated && account.login!="admin" && <Button color="primary" onClick = { e => this.handleOnClick(e) }>Join Session</Button>}
         </Col>
 
       </Row>

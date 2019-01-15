@@ -42,6 +42,9 @@ public class StudyGroup implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Course> courses = new HashSet<>();
 
+    @OneToMany(mappedBy = "studyGroup")
+    private Set<Session> sessions = new HashSet<>();
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -143,5 +146,13 @@ public class StudyGroup implements Serializable {
             ", name='" + getName() + "'" +
             ", capacity=" + getCapacity() +
             "}";
+    }
+
+    public Set<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(Set<Session> sessions) {
+        this.sessions = sessions;
     }
 }

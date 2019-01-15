@@ -12,6 +12,7 @@ import { getSearchEntities, getEntities } from './session.reducer';
 import { ISession } from 'app/shared/model/session.model';
 // tslint:disable-next-line:no-unused-variable
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
+import axios from "axios";
 
 export interface ISessionProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {}
 
@@ -26,6 +27,34 @@ export class Session extends React.Component<ISessionProps, ISessionState> {
 
   componentDidMount() {
     this.props.getEntities();
+  }
+
+  handleOnClick(event: any) {
+    /*axios.get(`http://localhost:5080/openmeetings/services/user/login?type=json&user=admin&pass=Ayham%232009`)
+      .then(res => {
+        var userHash = res.data.serviceResult.message;
+        var url = "http://localhost:5080/openmeetings/services/user/hash?sid="+userHash;
+        var rbody = {user: JSON.stringify({login: 'admin'})};
+        axios(
+          {
+            method: 'POST',
+            url,
+            data: rbody,
+            headers:{
+              'Content-Type': 'application/json; charset=utf-8'
+            }
+          }
+          ).then(result =>{
+          var win = window.open("http://localhost:5080/openmeetings/hash?secure="+result.data.serviceResult.message, '_blank');
+          win.focus();
+          debugger;
+        });
+
+        console.log(res);
+      })*/
+    var win = window.open(" http://localhost:5080/openmeetings/#room/7", '_blank');
+    win.focus();
+
   }
 
   search = () => {
@@ -111,6 +140,12 @@ export class Session extends React.Component<ISessionProps, ISessionState> {
                   <td>{session.section ? <Link to={`section/${session.section.id}`}>{session.section.id}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
+                      <Button onClick = { e => this.handleOnClick(e) } color="primary" size="sm">
+                        <FontAwesomeIcon icon="play" />{' '}
+                        <span className="d-none d-md-inline">
+                          Start
+                        </span>
+                      </Button>
                       <Button tag={Link} to={`${match.url}/${session.id}`} color="info" size="sm">
                         <FontAwesomeIcon icon="eye" />{' '}
                         <span className="d-none d-md-inline">

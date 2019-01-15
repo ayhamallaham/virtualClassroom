@@ -5,6 +5,7 @@ export interface IStudent {
   id?: number;
   groups?: IStudyGroup[];
   submissions?: ISubmission[];
+  name?: string;
 }
 
 export const defaultValue: Readonly<IStudent> = {};

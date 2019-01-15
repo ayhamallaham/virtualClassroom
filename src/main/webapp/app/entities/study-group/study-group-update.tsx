@@ -111,7 +111,7 @@ export class StudyGroupUpdate extends React.Component<IStudyGroupUpdateProps, IS
                     {students
                       ? students.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.name}
                           </option>
                         ))
                       : null}

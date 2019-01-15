@@ -106,7 +106,7 @@ export class Course extends React.Component<ICourseProps, ICourseState> {
                   </td>
                   <td>{course.name}</td>
                   <td>{course.level}</td>
-                  <td>{course.studyGroup ? <Link to={`study-group/${course.studyGroup.id}`}>{course.studyGroup.id}</Link> : ''}</td>
+                  <td>{course.studyGroup ? <Link to={`study-group/${course.studyGroup.id}`}>{course.studyGroup.name}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${course.id}`} color="info" size="sm">

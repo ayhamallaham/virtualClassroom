@@ -1,5 +1,6 @@
 package com.ayham.vcr.web.rest;
 
+import com.ayham.vcr.dto.StudentDto;
 import com.codahale.metrics.annotation.Timed;
 import com.ayham.vcr.domain.Student;
 import com.ayham.vcr.repository.StudentRepository;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -93,9 +95,11 @@ public class StudentResource {
      */
     @GetMapping("/students")
     @Timed
-    public List<Student> getAllStudents() {
+    public List<StudentDto> getAllStudents() {
         log.debug("REST request to get all Students");
-        return studentRepository.findAll();
+        List<Student> students= studentRepository.findAll();
+        List<StudentDto> dtos = students.stream().map(student -> new StudentDto(student)).collect(Collectors.toList());
+        return dtos;
     }
 
     /**

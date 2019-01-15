@@ -119,7 +119,7 @@ export class SessionUpdate extends React.Component<ISessionUpdateProps, ISession
                     {sections
                       ? sections.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.title}
                           </option>
                         ))
                       : null}

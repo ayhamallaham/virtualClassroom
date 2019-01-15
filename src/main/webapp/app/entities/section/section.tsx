@@ -106,7 +106,7 @@ export class Section extends React.Component<ISectionProps, ISectionState> {
                   </td>
                   <td>{section.title}</td>
                   <td>{section.order}</td>
-                  <td>{section.course ? <Link to={`course/${section.course.id}`}>{section.course.id}</Link> : ''}</td>
+                  <td>{section.course ? <Link to={`course/${section.course.id}`}>{section.course.name}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${section.id}`} color="info" size="sm">
